@@ -1,0 +1,267 @@
+{
+  "start": {
+    "title": "Bootvorgang Abgeschlossen",
+    "text": "Willkommen im Intranet der Behörde für urbane Maßnahmen (B.A.U.M.), Sibylle Kornfeld. \n\nAuf Ihrem Schreibtisch liegt ein Vorgang, der eigentlich unmöglich ist: Die 'Sofortmaßnahme 93/B'. Das Gebäude B-47A soll 5 Meter nach links verschoben werden. Deadline: Ende der Woche. Es fehlt jede vernünftige Begründung.",
+    "imageFile": "desk.jpg",
+    "imageDesc": "Ein unordentlicher Schreibtisch mit Nadeldrucker.",
+    "choices": [
+      {
+        "label": "Die Akte prüfen",
+        "target": "akte_lesen",
+        "effects": { "stress": 5 }
+      },
+      {
+        "label": "Zur Kaffeemaschine",
+        "target": "kaffee_holen"
+      }
+    ]
+  },
+  "kaffee_holen": {
+    "title": "Kaffeeküche (Flur 6)",
+    "text": "Die Kaffeemaschine brummt tapfer vor sich hin und ein stetiger Strahl dunkler Flüssigkeit ergießt sich in die Tasse. Ein echter Lichtblick an diesem langen Nachmittag – auch wenn Sie die Maschine und die Bohnen aus eigener Tasche bezahlen mussten, da 'Heißgetränke-Infrastruktur' seit 2014 nicht mehr im Haushaltsplan vorgesehen ist.",
+    "imageFile": "kaffee.jpg",
+    "imageDesc": "Eine tapfere Kaffeemaschine bei der Arbeit.",
+    "choices": [
+      {
+        "label": "Eine Tasse einschenken und zurück",
+        "target": "start",
+        "effects": { "coffee": 15, "stress": -5 }
+      }
+    ]
+  },
+  "akte_lesen": {
+    "title": "Vorgang: Gebäudeverschiebung",
+    "text": "Sie überfliegen das Papier. Der einzige Hinweis ist ein verblasster Stempel des Bauamts. Keine Originalpläne, keine Informationen zu weiteren Gründen.",
+    "choices": [
+      {
+        "label": "Bauamt (Kollege Müller) anrufen",
+        "target": "anruf_bauamt"
+      },
+      {
+        "label": "Direkt zum Archiv (Zimmer 473b)",
+        "target": "archiv_eingang",
+        "effects": { "playSound": "stamp" }
+      }
+    ]
+  },
+  "anruf_bauamt": {
+    "title": "Telekommunikation",
+    "text": "Herr Müller klingt müde. 'Ah, Frau Kornfeld. Mein Beileid. Ich hab davon gehört, aber ich bin nicht zuständig. Das Archiv müsste aber die Originalpläne haben. Herr Kowalski ist heute da.'",
+    "choices": [
+      {
+        "label": "Zum Archiv gehen",
+        "target": "archiv_eingang",
+        "effects": { "stress": 5, "playSound": "stamp" }
+      }
+    ]
+  },
+  "archiv_eingang": {
+    "title": "Zimmer 473b (Archiv)",
+    "text": "Die Tür klemmt. Von drinnen hören Sie das laute Stempeln von Herrn Kowalski. 'Ohne unterschriebene Genehmigung von Frau Schröder darf ich hier gar nichts rausgeben!', ruft er durchs Holz.",
+    "choices": [
+      {
+        "label": "Zum Referat „Genehmigungsverfahren“ (Frau Schröder)",
+        "target": "personal_abteilung",
+        "effects": { "stress": 5 }
+      }
+    ]
+  },
+  "personal_abteilung": {
+    "title": "Frau Schröder (Referat Genehmigungsverfahren)",
+    "text": "Frau Schröder tippt konzentriert. 'Wieder ein Sonderauftrag? Ich stell Ihnen die Genehmigung aus. Aber tun Sie mir einen Gefallen: Mein Kreislauf ist im Keller. Bringen Sie mir ein Mettbrötchen aus der Kantine?'",
+    "choices": [
+      {
+        "label": "Mettbrötchen überreichen",
+        "target": "schroeder_mett",
+        "reqItem": "mettbroetchen"
+      },
+      {
+        "label": "Zur Kantine gehen",
+        "target": "kantine",
+        "hideIfFlag": "mett_gekauft"
+      },
+      {
+        "label": "Zur Kantine gehen",
+        "target": "kantine_leer",
+        "showIfFlag": "mett_gekauft"
+      }
+    ]
+  },
+  "kantine": {
+    "title": "Kantine (Gebäude C)",
+    "text": "Hinten in der Auslage leuchtet es fast engelsgleich: Das letzte Mettbrötchen des Tages. Da läuft einem das Wasser im Mund zusammen.",
+    "choices": [
+      {
+        "label": "Mettbrötchen sichern",
+        "target": "kantine_mett_erhalten",
+        "effects": { "gainItem": "mettbroetchen", "setFlag": "mett_gekauft", "playSound": "success" }
+      },
+      {
+        "label": "Zurück zu Frau Schröder",
+        "target": "personal_abteilung"
+      }
+    ]
+  },
+  "kantine_leer": {
+    "title": "Kantine (Gebäude C)",
+    "text": "Die Auslage ist restlos leergekauft. Jemand hat sogar die Deko-Petersilie mitgenommen. Hier gibt es nichts mehr zu holen.",
+    "choices": [
+      {
+        "label": "Zurück zu Frau Schröder",
+        "target": "personal_abteilung"
+      }
+    ]
+  },
+  "kantine_mett_erhalten": {
+    "title": "Inventar-Update",
+    "text": "Ein kleiner Sieg an einem anstrengenden Tag.",
+    "imageFile": "mett.png",
+    "imageDesc": "Das majestätische Mettbrötchen.",
+    "choices": [
+      {
+        "label": "Zurück zu Frau Schröder",
+        "target": "personal_abteilung"
+      }
+    ]
+  },
+  "schroeder_mett": {
+    "title": "Solidarität im Amt",
+    "text": "Frau Schröder nimmt das Brötchen dankend an. 'Sie sind eine Lebensretterin. Hier ist die Genehmigung. Schauen Sie sich im Archiv auch den Ordner von 2007 an...'",
+    "imageFile": "schroeder.jpg",
+    "imageDesc": "Frau Schröder an ihrem aufgeräumten Schreibtisch.",
+    "choices": [
+      {
+        "label": "Ins Archiv eintreten",
+        "target": "archiv_betreten",
+        "effects": { "gainItem": "genehmigung", "loseItem": "mettbroetchen" }
+      }
+    ]
+  },
+  "archiv_betreten": {
+    "title": "Das Archiv (Innen)",
+    "text": "Herr Kowalski prüft die Genehmigung und heftet sie ab. 'In Ordnung. Den 2007er Ordner? Gang 4, Regal 12, Fach C.'\n\nSie blättern durch staubige Akten. Da ist er: Ein Vermerk von Herrn Maier (Leitungsebene). Das Gebäude wurde 2007 schon einmal verschoben... exakt 5 Meter nach rechts! Es geht nur darum, EU-Fördergelder für 'Strukturentwicklung' abzugreifen, bevor sie verfallen.",
+    "choices": [
+      {
+        "label": "Herrn Maier darauf ansprechen",
+        "target": "archiv_gespraech",
+        "effects": { "loseItem": "genehmigung" }
+      }
+    ]
+  },
+  "archiv_gespraech": {
+    "title": "Kontaktversuch Leitungsebene",
+    "text": "Herr Kowalski zuckt mit den Schultern. 'So finanzieren wir die Kantine, Frau Kornfeld.'\n\nSie versuchen, Herrn Maier zu erreichen, doch er ist 'in einer wichtigen Besprechung'. Stattdessen poppt eine dringende E-Mail auf: Sie haben ein neues Problem. Die Bürgerinitiative blockiert das Gebäude gerade. Sie können die Verschiebung im System ohnehin erst autorisieren, wenn der Platz frei ist.",
+    "choices": [
+      {
+        "label": "Zurück an den Schreibtisch",
+        "target": "zurueck_schreibtisch"
+      }
+    ]
+  },
+  "zurueck_schreibtisch": {
+    "title": "Neue E-Mail (WICHTIG)",
+    "text": "Sie öffnen Ihr Postfach. Die Initiative 'Rettet B-47A' hat sich an die Eingangstür gekettet. Sie protestieren gegen den Abriss (der gar nicht geplant ist). Die Polizei weigert sich einzugreifen ('politisch sensibel').",
+    "choices": [
+      {
+        "label": "Aus dem Fenster schauen",
+        "target": "fenster_blick"
+      }
+    ]
+  },
+  "fenster_blick": {
+    "title": "Die Blockade",
+    "text": "Sie sehen die wütenden Demonstranten unten stehen. Sie brauchen einen Trick, um sie gewaltfrei wegzulocken.",
+    "imageFile": "protest.jpg",
+    "imageDesc": "Protestierende vor dem Betonbau.",
+    "choices": [
+      {
+        "label": "Im Intranet nach Lösungen suchen",
+        "target": "loesung_suchen"
+      }
+    ]
+  },
+  "loesung_suchen": {
+    "title": "Intranet-Recherche",
+    "text": "Sie finden eine Vorlage des Naturschutzamts. Sie tragen ein, dass 5 Meter weiter links der Nistplatz der hochgradig gefährdeten 'Blauen Mauereidechse' entdeckt wurde. Das müsste die Demonstranten ablenken.",
+    "choices": [
+      {
+        "label": "Dokument ans Protest-Camp faxen",
+        "target": "eidechse_faxen",
+        "effects": { "playSound": "fax" }
+      }
+    ]
+  },
+  "eidechse_faxen": {
+    "title": "Übertragungsbericht: OK",
+    "text": "Das Fax zieht durch. Sie sehen aus dem Fenster, wie der Sprecher der Initiative das Papier liest. Plötzlich packen sie ihre Ketten und verlegen das Protest-Camp exakt 5 Meter nach links, um die (nicht existente) Eidechse zu schützen. Das Gebäude ist frei!",
+    "choices": [
+      {
+        "label": "Verschiebungs-Modul starten",
+        "target": "dos_terminal"
+      }
+    ]
+  },
+  "dos_terminal": {
+    "title": "B.A.U.M. MAINFRAME",
+    "text": "Das alte DOS-Fenster öffnet sich. Der Cursor blinkt provokant.\n\nVerschieben autorisieren: Gebäude B-47A [Y/N]?",
+    "imageFile": "dos_screen.png",
+    "imageDesc": "Grüner Text auf schwarzem CRT-Monitor.",
+    "choices": [
+      {
+        "label": "Eingabe vorbereiten...",
+        "target": "chat_boss"
+      }
+    ]
+  },
+  "chat_boss": {
+    "title": "Eingehende Nachricht",
+    "text": "Ein Chatfenster ploppt auf. Herr Maier (Leitungsebene): 'Frau Kornfeld, ich sehe, Sie sind im System. Drücken Sie auf Y. Wir brauchen die Fördergelder. Keine Spielchen. Das Amt zählt auf Sie.'",
+    "choices": [
+      {
+        "label": "[Y] - Dienst nach Vorschrift",
+        "target": "ende_1"
+      },
+      {
+        "label": "[N] - Betrug melden (Whistleblower)",
+        "target": "ende_2"
+      },
+      {
+        "label": "[SHIFT: 0.05m] - Kreativer Workaround",
+        "target": "ende_3"
+      }
+    ]
+  },
+  "ende_1": {
+    "title": "ENDE 1: Dienst nach Vorschrift",
+    "text": "Sie drücken Y. Ein dumpfes Grollen durchfährt das Gebäude. B-47A wird 5 Meter verschoben. Die EU-Gelder fließen, die Kantine kann wieder mehr als nur Mettbrötchen anbieten, und Ihre Kaffeemaschine wird aufgerüstet. Sie sind ein Rädchen im System, aber heute ein gut geöltes.",
+    "choices": [
+      {
+        "label": "Neues Spiel",
+        "target": "start",
+        "effects": { "stress": -100, "coffee": 100, "loseItem": "genehmigung", "removeFlag": "mett_gekauft" }
+      }
+    ]
+  },
+  "ende_2": {
+    "title": "ENDE 2: Der Whistleblower",
+    "text": "Sie leiten den Ordner von 2007 an den Rechnungshof weiter. Ein Skandal! Herr Maier muss zurücktreten. Allerdings wird auch die B.A.U.M. wegen 'struktureller Ineffizienz' geschlossen. Sie werden strafversetzt in die Kfz-Zulassungsstelle. Möge Gott Ihrer Seele gnädig sein.",
+    "choices": [
+      {
+        "label": "Neues Spiel",
+        "target": "start",
+        "effects": { "stress": -100, "coffee": 100, "loseItem": "genehmigung", "removeFlag": "mett_gekauft" }
+      }
+    ]
+  },
+  "ende_3": {
+    "title": "ENDE 3: Kreativer Workaround",
+    "text": "Sie ändern den Parameter im Quellcode. Statt 5 Metern wird das Gebäude um 5 Zentimeter verschoben. Das System registriert den 'Vollzug', die EU zahlt, und das restliche Budget der Baumaßnahme wird 'versehentlich' für neue, ergonomische Bürostühle in Ihrer Abteilung verbucht. Herr Maier lobt Ihre 'Kostenoptimierung'. Sie werden befördert.",
+    "choices": [
+      {
+        "label": "Neues Spiel",
+        "target": "start",
+        "effects": { "stress": -100, "coffee": 100, "loseItem": "genehmigung", "removeFlag": "mett_gekauft" }
+      }
+    ]
+  }
+}

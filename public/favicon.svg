@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect width="16" height="16" fill="#c0c0c0"/>
+  <rect x="2" y="2" width="12" height="12" fill="#fff" stroke="#808080" stroke-width="1"/>
+  <!-- Small tree -->
+  <rect x="7" y="10" width="2" height="3" fill="#8B4513"/>
+  <path d="M4 10 L8 4 L12 10 Z" fill="#228B22"/>
+  <path d="M5 7 L8 2 L11 7 Z" fill="#32CD32"/>
+</svg>
