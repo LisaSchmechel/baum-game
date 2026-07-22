@@ -1,16 +1,41 @@
-# React + Vite
+# B.A.U.M. Fachverfahren (Amtsschimmel & Anarchie)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Ein bürokratisches Text-Adventure-Spiel im 90er-Jahre-Intranet-Look. 
+Willkommen in der Behörde für urbane Maßnahmen (B.A.U.M.)! Du schlüpfst in die Rolle von Sibylle Kornfeld und versuchst, eine "Sofortmaßnahme" umzusetzen, bei der ein Gebäude aus ungeklärten Gründen um 5 Meter verschoben werden soll.
 
-Currently, two official plugins are available:
+**Software-Status:** Vibecoding (KI-generiert)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **Authentisches 90er-Jahre UI:** Graue Boxen, harte Rahmen und der Charme von Windows 95, realisiert mit `98.css`.
+- **Ressourcen-Management:** Behalte deinen Bürokratie-Stress und den stetig sinkenden Kaffee-Pegel im Auge, sonst droht der Burnout!
+- **Inventar:** Tausche Mettbrötchen gegen wichtige Akten-Genehmigungen.
+- **Narratives Gameplay:** Mehrere Lösungswege und drei völlig verschiedene, absurde Enden.
+- **Retro-Audio:** Klickende Buttons, ratternde Faxgeräte und melancholische Warteschleifen-Musik.
 
-## React Compiler
+## So startest du das Fachverfahren lokal
+Voraussetzung ist eine installierte Node.js-Umgebung.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Repository klonen:
+```bash
+git clone https://github.com/LisaSchmechel/baum-game.git
+```
+2. In den Ordner wechseln:
+```bash
+cd baum-game
+```
+3. Abhängigkeiten installieren:
+```bash
+npm install
+```
+4. Den lokalen Server starten:
+```bash
+npm run dev
+```
+5. Öffne den angezeigten Localhost-Link in deinem Browser.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Lizenzen & Attributions
+Die verwendeten Audio-Dateien unterliegen folgenden Lizenzen:
+- **stamping sound.m4a** by trangphanzen512986 (Attribution NonCommercial 3.0)
+- **Fax.wav** by LG (Attribution 4.0)
+- **"Limit 70"** by Kevin MacLeod / incompetech.com (Attribution 4.0)
+- **Success Fanfare Trumpets.mp3** by FunWithSound (CC0)
