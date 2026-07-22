@@ -3,14 +3,6 @@
 Ein bürokratisches Text-Adventure-Spiel im 90er-Jahre-Intranet-Look. 
 Willkommen in der Behörde für urbane Maßnahmen (B.A.U.M.)! Du schlüpfst in die Rolle von Sibylle Kornfeld und versuchst, eine "Sofortmaßnahme" umzusetzen, bei der ein Gebäude aus ungeklärten Gründen um 5 Meter verschoben werden soll.
 
-**Software-Status:** Vibecoding (KI-generiert)
-
-## Features
-- **Authentisches 90er-Jahre UI:** Graue Boxen, harte Rahmen und der Charme von Windows 95, realisiert mit `98.css`.
-- **Ressourcen-Management:** Behalte deinen Bürokratie-Stress und den stetig sinkenden Kaffee-Pegel im Auge, sonst droht der Burnout!
-- **Inventar:** Tausche Mettbrötchen gegen wichtige Akten-Genehmigungen.
-- **Narratives Gameplay:** Mehrere Lösungswege und drei völlig verschiedene, absurde Enden.
-- **Retro-Audio:** Klickende Buttons, ratternde Faxgeräte und melancholische Warteschleifen-Musik.
 
 ## So startest du das Fachverfahren lokal
 Voraussetzung ist eine installierte Node.js-Umgebung.
