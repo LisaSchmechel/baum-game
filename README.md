@@ -1,4 +1,4 @@
-# B.A.U.M. Fachverfahren (Amtsschimmel & Anarchie)
+# B.A.U.M. Fachverfahren 
 
 Ein bürokratisches Text-Adventure-Spiel im 90er-Jahre-Intranet-Look. 
 Willkommen in der Behörde für urbane Maßnahmen (B.A.U.M.)! Du schlüpfst in die Rolle von Sibylle Kornfeld und versuchst, eine "Sofortmaßnahme" umzusetzen, bei der ein Gebäude aus ungeklärten Gründen um 5 Meter verschoben werden soll.
